@@ -1,19 +1,21 @@
-# Study Git
+# GitTutoral
 
-## congif
-## config
+## 설정
+
 ### 초기설정
 ```
 git config --global user.name 'name'          // --global로 설정된 값은 처음 한 번만 설정
 git config --global user.email 'gthub email'  // 매번 다른 이름과 메일주소를 사용할 것이라면 --global 안써도 됨
 ```
+
 ### 설정확인 / 삭제
 ```
 git config --list     // 현재 git 설정을 출력
 git config --unset user.name              // 설정된 user.name 삭제
 git config --unset --global user.email    // --global로 설정된 user.email 삭제
 ```
-<br />
+
+
 ## 저장소 생성
 ### 저장소 생성
 ```
@@ -28,7 +30,7 @@ git remote                                     // 현재 프로젝트에 등록�
 git remote -v                                  // remote저장소 목록을 ULR과 함께 보여줌
 git remote set-url 저장소이름 새로운저장소주소   // remote저장소의 url주소 
 ```
-<br />
+
 ## status
 ### 현재 파일들의 상태 출력
 ```
@@ -38,7 +40,7 @@ git status
 - modified: 수정된 것
   + Changes to be commited: commit될 것
   + Changes not staged for commit: commit되지 않을 것
-<br />
+
 ## log
 ```
 git log                               // 현재까지 commit한 내용 출력
@@ -48,12 +50,12 @@ git log --branch                      // 모든 브랜치를 표현
 git log --graph                       // 그래프로 표현 
 git log -1                            // 최근 1개의 log만 표시
 ```
-<br />
+
 ## diff
 ```
 git diff    // modified 상태가 되며 수정된 요소가 무엇인지 출력
 ```
-<br />
+
 ## add
 ### 파일을 add하기
 ```
@@ -67,13 +69,13 @@ git reset           // 모든 파일의 add를 취소
 git reset 'File'    // 해당 파일을 unstaged상태로 변경
 git clean -fdx      // 모든 untracked파일 삭제
 ```
-<br />
+
 ## rm
 ```
 git rm 'File'           // 파일을 삭제 후 staged상태로 변경(work directory의 파일도 삭제)
 git rm --cached 'File'  // 파일을 untracked상태로 변경(work directory의 파일은 그대로 유지)
 ```
-<br />
+
 ## commit
 [좋은 커밋 메세지 작성법](https://meetup.toast.com/posts/106)
 ### commit하기
@@ -100,7 +102,7 @@ git commit --amend -m '새로운 메세지'   // 바로 직전의 commit 메세�
 git push -f // 수정 한 메세지 push하기
 * 다른 사람과 협업중인 공간에 push한 후 commit 수정은 권장하지 않음(충돌 위험 매우 큼)
 ```
-<br />
+
 ## checkout
 ### 브랜치 이동
 ```
@@ -113,7 +115,7 @@ git checkout .            // (위치: repository_root_dir) 프로젝트 내 모�
 git checkout 'dir'        // 해당 폴대 내 모든 파일을 modified되기 전 상태로 되돌리기
 git checkout -- 'file'    // 해당 파일이 modified되기 전 상태로 되돌리기
 ```
-<br />
+
 ## push
 ### Github에 작업물 push
 1. Github에 repository생성
@@ -128,12 +130,12 @@ git remote      // 확인
 git push -u origin master     // local저장소의 브랜치와 원격저장소의 master브랜치 연결
                               // 다음부터 git push만 하면 됨
 ```
-<br />
+
 ## pull
 ```
 git pull    // update내용을 local로 가져오기
 ```
-<br />
+
 ## stash
 ```
 git stash         // 새로운 stash 생성
@@ -147,7 +149,7 @@ git stash drop 'stash name'     // 해당 stash 제거
 git stash show -p | git apply -R                // stash 되돌리기
 git stash show -p 'stash name'| git apply -R    // 해당 stash 되돌리기
 ```
-<br />
+
 ## branch
 ```
 git branch      // 현재 브랜치목록을 보여줌
@@ -209,7 +211,7 @@ git branch -r                    // 원격저장소의 브랜치목록 보기
 git checkout -t origin/branch1   // 로컬에 'branch1'를 만들고 이동
 git checkout -b 'new-branch-name' 'origin/branch1'    // 새로운 이름으로 브랜치 가져오기
 ```
-<br />
+
 ## etc
 ```
 pwd                // 현재 나의 위치
@@ -219,8 +221,7 @@ git                // 사용할 수 있는 명령어 표시
 ls -al             // 현재 디렉토리의 파일 목록 출력
 cat 파일명.확장자   // 선택한 파일의 내용을 출력
 명령어 --help      // 해당 명령어에 대한 메뉴얼을 보여줌
-```
-<br />
+
 ---
 ## Fork한 repository 최신으로 동기화
 1. 원본 repository를 remote저장소로 추가
