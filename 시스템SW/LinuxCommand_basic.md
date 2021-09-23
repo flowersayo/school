@@ -90,7 +90,9 @@ rm -ri dir1/             // 디렉토리에 있는 내용을 하나하나 확인
 
 📌rm -ri
 : 파일, 폴더 하나하나씩 삭제할건지 여부를 물어봄.
+
 [예시]
+```
 rm: descend into directory 'new/'? y
 
 rm: remove regular empty file 'new/hello.txt'? y
@@ -98,7 +100,7 @@ rm: remove regular empty file 'new/hello.txt'? y
 rm: remove regular file 'new/pra2.txt'? y
 
 rm: remove directory 'new/'? y
-
+```
 📌rmdir VS rm -r 
 
 : rmdir로 비어있지 않은 폴더를 삭제하게 된다면 다음과 같은 실패메시지가 뜬다.
