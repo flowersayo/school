@@ -11,9 +11,8 @@
 ```
 pwd                   // 현재 작업중인 디렉토리 출력.
 mkdir 디렉토리명     // 폴더만들기
-file 파일명          // file 타입 및 여러 정보를 알려줌
+file 파일명.확장자   // 파일에 관한정보제공  (ASCII 인지 UNICODE인지 등)
 less 파일명          // 읽을 수 있는 텍스트를 보여줌 (읽기전용) -> q를 통해 읽기종료
-file 파일명.확장자  // 파일에 관한정보제공  (ASCII 인지 UNICODE인지 등)
 ``` 
 
 ## mkdir
@@ -91,15 +90,22 @@ rm -ri dir1/             // 디렉토리에 있는 내용을 하나하나 확인
 
 📌rm -ri
 : 파일, 폴더 하나하나씩 삭제할건지 여부를 물어봄.
+[예시]
 rm: descend into directory 'new/'? y
+
 rm: remove regular empty file 'new/hello.txt'? y
+
 rm: remove regular file 'new/pra2.txt'? y
+
 rm: remove directory 'new/'? y
 
 📌rmdir VS rm -r 
+
 : rmdir로 비어있지 않은 폴더를 삭제하게 된다면 다음과 같은 실패메시지가 뜬다.
+
 🚫rmdir: failed to remove 'new': Directory not empty🚫
-즉, rmdir은 비어있는 디렉토리만 삭제할 수 있는 반면, rm -r은 파일이 들어있는 디렉토리도 삭제한다.
+
+즉, `rmdir`은 비어있는 디렉토리만 삭제할 수 있는 반면, `rm -r`은 파일이 들어있는 디렉토리도 삭제한다.
 
 
 
@@ -111,7 +117,7 @@ ex) `/c/Users/flowe`
 - 상대경로 : 현재 경로에서 이동하고자 하는 곳 
 
 ex) working directory가`/c/Users/flowe` 인데 `cd linux`라는 명령을 주면 `/c/Users/flowe/linux` 로 이동.
-ㅊ
+
 ```
 cd 경로                     //경로 로 이동
 cd | cd$HOME |  cd ~        // home directory로 이동. ex) /c/Users/flowe
