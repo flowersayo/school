@@ -1,4 +1,4 @@
-Homework 2_1 [SparseMatrix.cpp]
+# Homework 2_1 [SparseMatrix.cpp]
 
 
 0. what variables change the results. 
@@ -29,7 +29,7 @@ and print B^T  in densed matrix form.
 - output : print SparseMatirx in dense matrix form 
 
 
-Homework 2_2 [mem_alloc_3D_double.cpp] 
+# Homework 2_2 [mem_alloc_3D_double.cpp] 
 
 0. what variables change the results. 
 : You can customize the size of the 3D array by changing the ROWS, COL, and HEIGHT values
