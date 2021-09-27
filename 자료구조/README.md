@@ -5,7 +5,7 @@
 
 - 00. Data structure
 - 01. Recursion, Iteration
-- 02. Array_pointer : [Homework 2]
+- 02. Array_pointer : [Homework 2](https://github.com/flowersayo/2-2/tree/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/3.%20Array%20Pointer)
 - 03. Linked_list  
 - 04. stack queue
 - 05. tree
