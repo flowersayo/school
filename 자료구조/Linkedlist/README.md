@@ -1,4 +1,4 @@
-Homework 3_2 [Merge.c]
+# Homework 3_2 [Merge.c]
 
 0. what variables change the results. 
 : if you want to change the element of two list,
@@ -33,7 +33,7 @@ the num of list2 is add into Linked list 'b'
 - Input : the address of the two list that want to be merged(list 1, list 2) , list to store the result of merging. (result)
 - Output : The result of merging list1 and list2 is stored into result 
 
-Homework 3_3 [ListADT]
+# Homework 3_3 [ListADT]
 
 
 0. what variables change the results. 
