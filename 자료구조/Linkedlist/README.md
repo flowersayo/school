@@ -1,12 +1,12 @@
 # Homework 3_2 [Merge.c]
 
 0. what variables change the results. 
-: if you want to change the element of two list,
- modify value on 	int list1[] = { 1,2,5,10,15,20,25 };
-		int list2[] = { 3,7,8,15,18,30 };
+: if you want to change the element of two list,modify value on 	
+			`int list1[] = { 1,2,5,10,15,20,25 };`
+			`int list2[] = { 3,7,8,15,18,30 };`
 
 the num of list1 is add into Linked list `a`
-the num of list2 is add into Linked list 'b'
+the num of list2 is add into Linked list `b`
 
 1. purpose of this code
 : Implement a merge function using a linked list that generates a new linked list ܿ by merging ܽ a and b. 
