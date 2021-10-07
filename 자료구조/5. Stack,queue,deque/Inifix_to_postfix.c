@@ -98,4 +98,5 @@ void infix_to_postfix(const char exp[])
 }
 
 void main() {
-	infix_to_postfix("(2+3)*4+9");}
+	infix_to_postfix("(2+3)*4+9");
+}
