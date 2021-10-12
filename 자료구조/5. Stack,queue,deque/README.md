@@ -1,4 +1,4 @@
-Homework 4_1 [Double_linked_stack.cpp]
+# Homework 4_1 \[Double_linked_stack.cpp\]
 
 0. what variables change the results. 
 : you can freely add or delete element using function push() and pop()
@@ -28,7 +28,7 @@ Homework 4_1 [Double_linked_stack.cpp]
 - input : address of DlistStackType
 - output : Returns the element at the top of the stack without removing it.
 
-Homewordk 4_2 [Simulation.cpp]
+# Homewordk 4_2 \[Simulation.cpp\]
 
 0. what variables change the results. 
 : You are required to input several values required to assume situation.
