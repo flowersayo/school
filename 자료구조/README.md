@@ -4,10 +4,10 @@
 2학년 2학기 자료구조 목차
 
 - 1. Data structure
-- 2. Recursion, Iteration : [Homework 1](https://github.com/flowersayo/2-2/tree/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/2.%20Recursion%2C%20Iteration)
-- 3. Array_pointer : [Homework 2](https://github.com/flowersayo/2-2/tree/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/3.%20Array%20Pointer)
-- 4. Linked_list  : [Homework 3](https://github.com/flowersayo/2-2/tree/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/4.%20Linkedlist)
-- 5. Stack queue deque : [Homework 4](https://github.com/flowersayo/2-2/tree/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/5.%20Stack%2Cqueue%2Cdeque)
+- 2. Recursion, Iteration : [Homework 1](https://github.com/flowersayo/2-2/tree/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/2.%20Recursion%2C%20Iteration), [Report](https://github.com/flowersayo/2-2/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/2.%20Recursion%2C%20Iteration/Recursion_Homework01.pdf)
+- 3. Array_pointer : [Homework 2](https://github.com/flowersayo/2-2/tree/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/3.%20Array%20Pointer), [Report](https://github.com/flowersayo/2-2/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/3.%20Array%20Pointer/Technical%20report%20-%20homework2.pdf)
+- 4. Linked_list  : [Homework 3](https://github.com/flowersayo/2-2/tree/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/4.%20Linkedlist), [Report](https://github.com/flowersayo/2-2/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/4.%20Linkedlist/Technical%20report_HW3.pdf)
+- 5. Stack queue deque : [Homework 4](https://github.com/flowersayo/2-2/tree/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/5.%20Stack%2Cqueue%2Cdeque), [Report](https://github.com/flowersayo/2-2/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/5.%20Stack%2Cqueue%2Cdeque/Technical_Report.pdf)
 - 6. Tree
 - 7. Priority_queue 
 - 8. Sorting
