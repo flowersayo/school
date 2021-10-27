@@ -6,6 +6,17 @@
 - 디렉토리명 : `dir` , `dir/` `/dir` 은 불가능!
 - 파일명 : 파일명.확장자
 
+## 간단한 커맨드
+
+```
+date  //현재시간띄우기
+cal   //캘린더 띄우기
+df    //리눅스 시스템 전체의 (마운트 된) 디스크 사용량
+free  //사용가능한 메모리 공간
+df -u //-h 옵션을 사용하면 사람이 보기 좋게 메가(M), 기가(G) 단위로 디스크 공간을 확인
+
+```
+
 ## 기본
 
 ```
@@ -13,7 +24,11 @@ pwd                   // 현재 작업중인 디렉토리 출력.
 mkdir 디렉토리명     // 폴더만들기
 file 파일명.확장자   // 파일에 관한정보제공  (ASCII 인지 UNICODE인지 등)
 less 파일명          // 읽을 수 있는 텍스트를 보여줌 (읽기전용) -> q를 통해 읽기종료
+cd 디렉토리명        // 디렉토리로 이동
+cd ~유저명           // 특정 유저의 홈 디렉토리로 이동.
 ``` 
+
+
 
 ## mkdir
 :디렉토리 생성
@@ -42,6 +57,10 @@ ls -al h* .o          // 'h'로 시작하고 'o'로 끝나는 디렉토리 목�
 ls > 파일명.확장자      // 디렉토리 내용을 파일에 저장
 ````
 
+📌 ls옵션
+
+![KakaoTalk_20211027_233150576](https://user-images.githubusercontent.com/86418674/139090471-3112db5a-e78d-4782-a73a-5e56c07ea9f2.jpg)
+
 ✨다양한 조합으로 ls 사용하기
 
 ls -alSrh ->  a(숨겨진파일까지 포함), S(파일크기순), r(알파벳역순), h(보기좋게) 출력.
@@ -61,6 +80,8 @@ cp file1 file2 dir1/          //한번에 여러개의 파일을 디렉토리에
 cp -r dir1/ dir_new/         //디렉토리 전체를 복사 (dir1을 dir_new/라는 이름으로 recursive하게)
 
 ```
+📌cp 옵션
+![KakaoTalk_20211028_003553417](https://user-images.githubusercontent.com/86418674/139098972-d879276f-ce6c-46bf-aa76-2effc961820d.jpg)
 
 🔱Tip \[`tree` 명령어를 사용하면 디렉토리 구조를 트리형식으로 확인할 수 있다.\]
 
@@ -75,6 +96,9 @@ mv file1 dir1/              // file1을 dir1로 이동
 mv file1 file2 ... dir1/    // 여러개의 파일(file1,file2..)을 dir1으로 한번에 이동
 mv dir1/ dir2/              // dir1을 dir2로 이름변경
 ```
+📌mv 옵션
+
+![KakaoTalk_20211028_004000161](https://user-images.githubusercontent.com/86418674/139099621-1617d0bb-ee04-4b3e-bb48-bf7c7ef5e64d.jpg)
 
 ## rm (remove)
 > 파일, 디렉토리 삭제
@@ -85,11 +109,12 @@ rm *.확장자               // 확장자로 끝나는 파일을 모두 삭제
 rm *                     // 모든 파일을 삭제
 rm -r dir1/              // dir1 디렉토리를 삭제 
 rm -rf dir1/             // 경고없이 강제로 dir1을 삭제한다. -> 위험한 명령어이니 조심해서 사용
-rm -ri dir1/             // 디렉토리에 있는 내용을 하나하나 확인하면서 삭제
+rm -ri dir1/             // 디렉토리에 있는 내용을 하나하나 확인하면서 삭제. 파일, 폴더 하나하나씩 삭제할건지 여부를 물어봄.
 ```
+📌rm 옵션
 
-📌rm -ri
-: 파일, 폴더 하나하나씩 삭제할건지 여부를 물어봄.
+![KakaoTalk_20211028_004013604](https://user-images.githubusercontent.com/86418674/139099736-d7be6be3-5160-46e2-9a47-d5a8acf8f471.jpg)
+
 
 [예시]
 ```
@@ -160,12 +185,14 @@ touch 파일명.확장자       // 파일생성
 
 
 ## cat,less
-: 파일 읽기
+: 파일 읽기 (read only)
+
 
 ```
 cat 파일명.확장자  //파일보기 
-
+less 파일명.확장자  //파일보기 
 ```
 
-⛔⛔⛔⛔⛔ 여기서 부턴 조금 minor한 것들 ⛔⛔⛔⛔⛔
+📌읽기 도움말
+![KakaoTalk_20211028_002614096](https://user-images.githubusercontent.com/86418674/139097146-f327b721-a113-41ec-ba54-04fcf34c1710.jpg)
 
