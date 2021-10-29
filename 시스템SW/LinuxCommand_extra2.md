@@ -30,7 +30,7 @@ https://jjeongil.tistory.com/997
 
 ```
 echo $((2+2)) //4
-echo $(((5**2)*3)) //75
+echo $(((5**2)*3)) //5<sup>2</sup> *3 = 75
 echo $((5/2)) //2 -> support only integer arithmetic
 ```
 
@@ -44,88 +44,118 @@ echo {A..C} {A,B,D,E} // A B C A B D E
 echo {A..C}-{A,B,D,E} // A-A A-B A-D A-E B-A B-B B-D .... C-E
 mkdir test- {1..3} // test1,test2,test3 디렉토리 생성
 ```
-🔊{}와 {}가 붙어있으면 같은 덩어리로 분류되지만 떨어져있으면 각자 출력된다.
+🔊 {}와 {}가 붙어있으면 같은 덩어리로 분류되지만 떨어져있으면 각자 출력된다.
 
 ## 🔔매개변수확장(Parameter Expansion)
 
 ```
-echo $USER : 유저의 이름 출력
-printenv | head n -6 : 환경변수목록을 앞에서부터 6번째 줄까지 출력
+echo $USER // 유저의 이름 출력
+printenv | head n -6 // 환경변수목록을 앞에서부터 6번째 줄까지 출력
 ```
 🔍리눅스에서 환경변수를 설정하는 방법
 http://daplus.net/linux-%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90%EC%84%9C-%ED%99%98%EA%B2%BD-%EB%B3%80%EC%88%98-ld_library_path%EB%A5%BC-%EC%84%A4%EC%A0%95%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/
 
 ##  ⭐명령어 치환(Command Substitution)
 
-- 한 명령어의 output을 다른 문장(명령어)의 input으로 연결해준다.
-- `|` (pipeline)과 반대효과.
-- 
+- 한 명령어의 output을 다른 문장(명령어)의 input으로 사용할 수 있도록 해준다.
+- `|` (pipeline)의 반대효과.
+
 ```
 ls -l $(which cp) // cp명령어가 위치한 곳에서 ls -l 커맨드 실행
 type $(ls /usr/bin/* | grep zip) //  1. /usr/bin폴더의 모든 파일의 목록이 grep명령어의 input으로 쓰인다. 2.grep결과가 type명령어의 input으로 쓰인다.
 ```
 
-## 쌍따옴표(Double Quotes)
-- `""`안에 들어간 어떤 내용이던 특별한 의미를 잃고 문자로서 취급된다.
-- 단, `$`,`\`,``` 는 예외이다.
-
+## 💬따옴표
+- 쌍따옴표(Double Quotes): `" "`안에 들어간 내용은 문자로서 취급된다. 단, `$`,`\`,``` 는 예외이다.
+- 홑따옴표(Single Quotes): `' '`안에 들어간 모든 확장(expansion)을 억제한다.  어떤 내용이던 특별한 의미를 잃고 문자로서 취급된다.
+- Escaping Characters :'\'를 통해 선택적으로  expansion을 억제할 수 있다. ex) `$`,`\`,``` 와 같은 기호를 출력하고 싶다면 `\` 다음에 써준다. 
 ```
-echo hello world             123 // hellow world 123
-echo "hello world             123" // hellow world           123
-echo $(cal)  //캘린더 출력 (나열)
-echo "$(cal)" // 캘린더 출력 (가지런히 정렬된채로)
-
-```
-- 
-|Operator|Description|
-|------|---|
-|+|addition|
-|테스트1|테스트2|
-|테스트1|테스트2|
-
-
-ex) `cd /usr/bin/; ls; cd -`  : `/usr/bin/` 으로 이동해서 파일목록을 출력하고 다시 원래있던 디렉토리로 돌아와라.
-
-- `alias` 를 이용하면 사용자가 정의한 커맨드를 만들 수 있다. 
-- 단, 단순 alias로 정의한 command는 일회용이다. 터미널을 종료하면 다음번 실행시에 초기화된다.
-
-기본 값으로 만들어두고 싶다면 환경설정에서 바꾸어야한다. 
-
-```
-alias 커맨드명='작업내용' : 작업내용을 시행하는 커맨드 만들기
-ex ) alias getBin='cd /usr/bin/; ls; cd -'
-unalias 커맨드명 : 커맨드해제
-```
-
-🗳📦🗃
-🔱⚜☢〽♻🔰💠Ⓜ🆗▶➰✔💲💱🟠🟢🔵🟤🔴🟠🟨🔸🔹✨🔊
-## ⭐Redirection 
-
-- I/O : Standard Input, Output, Error 
-- `I/O redirection` : 어디서 input을 받아들이고 어디로 output을 보낼 것인지 정할 수 있다.
-- `>` 연산자는 데이터의 흐름을 말함. output을 -> 으로 보내겠다는 것.
-- `>` 는 기본적으로 Output만을 이동시키며, Error는 똑같이 화면상에 출력됨. 
-- Error까지 이동시키고자 할때에는 `2>` 활용.
-- `/dev/null` 는 휴지통 비슷한 개념. 원하지 않는 ouput을 버리고 싶을때 활용.
-- `cat` : 하나 이상의 Input(ex.파일, 사용자 입력)을 읽어 그대로 Standard Output에 복사한다. --> 종료는 `ctrl + d` or `ctrl + c`
-
-
-```
-[활용]
-- `커맨드 > 파일` : 커맨드의 output을 파일에 저장한다. (overwrite)
-- `커맨드 >> 파일` : 커맨드의 output을 덧붙여 저장한다. (ammend)
-- `커맨드 < 파일` :  파일을 커맨드의 input으로 사용한다.
-- `커맨드 > /dev/null` :  커맨드의 output을 버린다.
-- `커맨드 2> 파일` : 에러메시지만 파일에 저장
-- `
-```
-
-## 🗒grep 
-: 파일에서 텍스트패턴을 찾을때 유용.
-
-```
-grep str 파일명 : 파일에서 str을 찾는다. str이 포함된 모든 구문을 OUTPUT으로 출력한다.
+echo hello world             123                        // hellow world 123
+echo "hello world             123"                   // hellow world           123
+echo $(cal)                                          //캘린더 출력 (나열)
+echo "$(cal)"                                         // 캘린더 출력 (가지런히 정렬된채로)
+echo text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER    // text /home/ubuntu/*.txt a b foo 4 ubuntu
+echo "text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER"  // text~*.txt {a,b} foo  4 ubuntu
+echo 'text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER' // text~*.txt {a,b} $(echo foo) $((2+2)) $USER 
+echo "the price is \$5.00 "                           // the price is $5.00 
 ```
 
 
-📍📌 🔍🔎📚
+## 🖱️커서이동 
+
+![KakaoTalk_20211029_164645061](https://user-images.githubusercontent.com/86418674/139396742-eab57761-0a0b-4eb9-8694-22cf357dce79.jpg)
+
+
+
+## 📑 내용 수정
+
+![KakaoTalk_20211029_165242438](https://user-images.githubusercontent.com/86418674/139397021-7115d658-1b7f-4ed3-bd8c-71d88d84e3b2.jpg)
+
+## 🆗자동완성
+:문자열을 입력후 `<Tab>`키를 누르면 그 문자열로 시작하는 파일이나 디렉토리의 나머지 글자가 자동 완성된다. 
+  단 , 첫 문자가 같은 디렉토리나 파일이 여러개인 경우 `<Tab>` 키 한번만 누르면 아무 변화도 없지만 `<Tab>` 키 두번 연속으로 누르면 동일하게 시작하는 모든 디렉토리나 파일을 출력해 준다. 또한 명령어타이핑 도중에 `<Tab>`키를 눌러 명령어를 자동완성시킬수도 있다.
+
+## 🛬히스토리 (History) 
+- `$history` 를 통하여 내가 과거에 작성했던 커맨드 목록을 시간 순서대로 볼 수 있다.
+- .bash_history 폴더에 히스토리내역이 저장되어있다.
+- 커맨드에는 특정 번호가 붙는데 `!number` 와 같이 명령함으로서 그 번호가 붙어있는 명령어를 그대로 실행시킬 수 있다.
+- History Expansion
+  
+![KakaoTalk_20211029_173513829](https://user-images.githubusercontent.com/86418674/139403589-a5ab7bad-ad7d-4cc5-a33a-0633ce100414.jpg)
+
+
+## 🔰접근권한 (Permission)
+- 어떤파일이든 user, group, other 에 대해 각각 권한을 주게 된다.
+- drwxr-xrw- 는 네구간으로 분할할 수 있다. d rwx r-x rw-
+- 맨 첫글자(d)는 파일의 유형을 의미한다.
+![KakaoTalk_20211029_175155898](https://user-images.githubusercontent.com/86418674/139406155-f135250c-5463-4b22-b975-e852bc2de73d.jpg)
+
+- 그 다음 첫 'rwx'는 파일의 소유자(user)에 대한 접근 권한
+- 중간 'r-x'는 소유 group에 대한 접근 권한
+- 마지막 'rw-'는 모든사람(world)에 대한 접근권한
+
+- 속성 (r,w,x)
+각각 read,write,execution 권한을 의미한다. 대상이 파일인지 디렉토리인지에 따라 실질적인 의미가 다르다.
+
+|attribute|file|directory|
+|---|---|---|
+|r|open and read|allow directory's contents to be listed|
+|w|write and truncate|allow files within a directory to be created, deleted and renamed|
+|x|symbolic link|allow a directory to be entered ex)cd directory|
+
+-> directory에서의 r,w는 x가 선행되어야한다.
+
+### 🔸접근 권한 부여하기
+ `chmod (abc)<sub>8</sub> 파일명`
+:오직 파일의 소유자나 root만이 해당 파일or디렉토리의 접근권한을 변경할 수 있다. 
+
+- 8진수로 접근권한 표현하기
+
+![KakaoTalk_20211029_180821200](https://user-images.githubusercontent.com/86418674/139409061-4e52720b-5768-4595-a41f-a99e1e83a595.jpg)
+
+### 🔸파일 소유자와 그룹 바꾸기
+`chown 소유자:그룹명 파일명` 
+: root권한을 필요로한다.
+
+ex) `chown root:root f1.txt`
+
+
+☑️`tip` `id` 커맨드를 통해 자신의 접근권한(identity)를 확인할 수 있다.
+
+## Execute a Command as Another User
+- `sudo [옵션] [사용자명]` : 일반유저가 일시적으로 다른 유저로서 명령어를 실행할 수 있도록 하는 명령어 (-u 옵션으로 인자를 설정하지 않으면 default 사용자는 root)
+- `su [옵션] [사용자명]` : 계정전환
+
+🤞 `su` 와  `sudo`의 차이?
+:sudo는 root의 권한을 잠시 빌려서 명령어를 수행하는 것인반면, su는 유저를 직접 switch 한다는 차이점이 있다.
+
+```
+sudo -u flowe cat def1.c          // 유저 flowe의 권한을 잠시 빌려 cat명령어를 실행한다.
+su - flowe                        // flowe 로 계정전환 
+su                                //root로 계정전환
+sudo apt update                  //apt update라는 명령어를 root로서 (즉, root의 권한으로) 실행
+sudo chown ubuntu:ubuntu f1.txt // f1.txt파일의 owner를 ubuntu,group을 ubuntu로 변경.
+```
+
+
+🗳📦🗃🔱⚜☢〽♻🔰💠Ⓜ▶➰✔💲💱🟠🟢🔵🟤🔴🟠🟨🔸🔹✨🔊📍📌 🔍🔎📚
