@@ -1,5 +1,5 @@
-# ➕LinuxCommand_extra4
-`부가적인 리눅스 커맨드 모음 4`
+# ➕LinuxCommand_process&vi.
+`process, vi 관련 리눅스 커맨드 모음 `
 
 ## 📢프로세스 (process)
 : 컴퓨터에서 연속적으로 실행되고 있는 컴퓨터 프로그램. 
