@@ -1,4 +1,4 @@
-Homework 5_2 [Tree_successor.cpp]
+# Homework 5_2 [Tree_successor.cpp]
 
 0. what variables change the results. 
 : The result can be changed by reorganizing structure of tree.
@@ -14,7 +14,7 @@ And print a successor sequentially from leftmost node.
 - output : returns the predecessor of given TreeNode.
 
 
-Homework 5_3 [Tree_predecessor.cpp]
+# Homework 5_3 [Tree_predecessor.cpp]
 
 0. what variables change the results. 
 : The result can be changed by reorganizing structure of tree.
@@ -29,7 +29,7 @@ And print a predecessor sequentially from rightmost node.
 - input : address of TreeNode
 - output : returns the successor of given TreeNode.
 
-Homework 5_4 [bst_insertion_deletion.cpp]
+# Homework 5_4 [bst_insertion_deletion.cpp]
 
 0. what variables change the results. 
 
@@ -45,7 +45,7 @@ the left subtree.
 
 2) void delete_node(TreeNode **root, int key)
 - input :  address of root pointer , data that you want to delete in
-- output : 
+- output : delete node in tree with keep rules of tree 
 
 3) void inorder(TreeNode *root)
 - input : address of root
