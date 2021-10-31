@@ -1,4 +1,9 @@
+# Homework 5_1 [order of postorder traversal]
+![20211031192605](https://user-images.githubusercontent.com/86418674/139578246-50cbd409-58f8-4991-865d-41093c14cedc.png)
+
+
 # Homework 5_2 [Tree_successor.cpp]
+![20211031192439](https://user-images.githubusercontent.com/86418674/139578256-8d9a5cda-8b40-434c-a120-e2684175318a.png)
 
 0. what variables change the results. 
 : The result can be changed by reorganizing structure of tree.
@@ -15,6 +20,7 @@ And print a successor sequentially from leftmost node.
 
 
 # Homework 5_3 [Tree_predecessor.cpp]
+![20211031192446](https://user-images.githubusercontent.com/86418674/139578267-7ab1302a-0ee2-4bab-a077-775a3887173a.png)
 
 0. what variables change the results. 
 : The result can be changed by reorganizing structure of tree.
@@ -30,6 +36,7 @@ And print a predecessor sequentially from rightmost node.
 - output : returns the successor of given TreeNode.
 
 # Homework 5_4 [bst_insertion_deletion.cpp]
+![20211031192453](https://user-images.githubusercontent.com/86418674/139578269-9b346a92-3791-45b6-a015-9d516595fe79.png)
 
 0. what variables change the results. 
 
