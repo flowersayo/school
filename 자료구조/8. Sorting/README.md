@@ -1,4 +1,4 @@
-# Homework 6_1 [selection_sort.cpp]
+# Homework 7_1 [selection_sort.cpp]
 
 
 1. purpose of this code
@@ -16,7 +16,7 @@
 - output : stably sort list in ascending order 
 
 
-# Homework 6_2 [radix_sort.cpp]
+# Homework 7_2 [radix_sort.cpp]
 
 1. purpose of this code
 : implements radix sort using `counting sort`
