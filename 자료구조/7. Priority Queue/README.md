@@ -1,4 +1,4 @@
-Homework 6_1 [heapsort.cpp]
+# Homework 6_1 [heapsort.cpp]
 
 
 1. purpose of this code
@@ -39,7 +39,7 @@ Then, tests result by generating a random input array .
 
 
 
-Homework 6_2 [huffman.cpp]
+# Homework 6_2 [huffman.cpp]
 
 1. purpose of this code
 : Implement the code for encoding and decoding an input data using Huffman 
