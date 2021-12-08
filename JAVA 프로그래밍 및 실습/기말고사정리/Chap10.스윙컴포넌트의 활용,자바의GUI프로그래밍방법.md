@@ -24,4 +24,4 @@
 
 ## 11. JOptionPane - p.56
 
-## 12. 
+## 12. JSlider - p.14 (12주차)
