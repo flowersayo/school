@@ -1,4 +1,4 @@
-# Chap09.자바의 이벤트 처리 및 이벤트 기반 프로그래밍  
+# Chap09.자바의 이벤트 처리 및 이벤트 기반 프로그래밍  - 11주차
 
 ## 1. 이벤트 종류
 
@@ -75,4 +75,64 @@
 ![KakaoTalk_20211208_125546600](https://user-images.githubusercontent.com/86418674/145145648-bbfdb06f-e625-4f3e-b857-c8bd130ce8d2.jpg)
 
 
+## 8. Key이벤트로 키입력받기
 
+### key이벤트와 포커스
+- 포커스 : 컴포넌트나 응용프로그램이 키 이벤트를 독점하는 권한
+```
+component.setFocusable(true); // component가 포커스를 받을 수 있도록 설정
+component.requestFocus(); // component에 포커스 강제 지정
+```
+
+
+### KeyListener 의 메소드와 키 
+
+- 3개의 메소드 : keyPressed -> keyReleased -> keyTyped
+
+- 키의 종류
+  - 유니코드 키
+    - A-Z,a~z,0~9,!,@,& 등 문자들에 대해서만 유니코드 정의
+  - 유니코드 아닌키
+    - 문자 키가 아닌 키들 (제어키) ex) <Home> ,<Up> ,<Shift> , <F5> 등
+    - 키마다 키 코드 값(가상 키 코드 값)이 정의되어 있음.
+    - 유니코드 키가 아닌 경우  keyPressed -> keyReleased 만 호출되고 keyTyped은 호출되지 않음
+  - 가상키 
+ : 모든 키에 정의되어있는 자바의 가상 키 코드
+ 
+ 
+### 가상키
+ : 가상 키 코드는 KeyEvent 클래스에 상수로 선언.
+ 
+ ![KakaoTalk_20211208_130718171](https://user-images.githubusercontent.com/86418674/145146644-38f50b5d-359a-4f44-ba12-c33888ebfe31.jpg)
+ 
+ 
+ ### ✨ 입력된 키 판별 ✨
+ : 키가 입력되면 키 정보를 가진 이벤트 객체(KeyEvent) 생성 및 리스너에 전달 
+ 
+ 1. 키의 문자코드(유니코드) 알아내기
+ ### `char KeyEvent.getKeyChar()` 
+ : 눌러진 키에 해당하는 문자코드(유니코드) 리턴. 눌러진 키가 문자 키인 경우에만 작동. ex) 'a','b','5' 
+ 
+ 2. 입력된 키의 가상 키 값 알아내기 
+ ### `int KeyEvent.getKeyCode()` 
+ : 모든 키에 대해 작동. 입력된 키를 판별하기 위해 가상키값과 비교. 가상 키 값은 KeyEvent 클래스의 상수로 정의됨.
+ 
+ 3. 키 이름 문자열 리턴 
+ ### `String KeyEvent.getKeyText(int keyCode) 
+ : Static 메소드, 매개변수 keyCode의 코드값(가상키)에 해당하는 키의 이름 문자열 리턴. 
+ F1의 경우 "F1", Shift의 경우 "Shift"
+ 
+
+## 9. Mouse이벤트로 마우스 동작 인식
+
+ ### 마우스 이벤트와 마우스 관련 리스너 
+ - 8가지 경우 : mousePressed() =>mouseDragged - mouseDragged -mouseDragged ... => mouseReleased() => mouseClicked()  등
+ - MouseMotionListener의 이벤트 `mouseDragged`, `mouseMoved`도 함께 처리하고자하는 경우 마우스 모션 리스너에도 등록 필요 
+ -> `component.addMouseMotionListener(myMouseMotionListener);`
+ 
+ ### 마우스와 마우스 모션 이벤트 활용 p.19
+ 
+ ### `MouseWheelEvent` 와  `MouseWheelEventListener` p.21
+ 
+ 
+ 
