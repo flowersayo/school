@@ -2,7 +2,7 @@
 
 
 1. purpose of this code
-: implements ‘selection_sort_stable’ that produces the stable sorting result.
+: implements ‘selection_sort’ that produces the stable sorting result.
 
 
 2. function
