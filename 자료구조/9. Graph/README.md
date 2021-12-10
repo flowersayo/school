@@ -1,5 +1,4 @@
-Homework 8_1 [min_heap.cpp]
-
+# Homework 8_1 [min_heap.cpp]
 
 1. purpose of this code
 : Implements the ‘decrease-key’ and ‘increase_key’ in the min-heap
@@ -23,7 +22,8 @@ Homework 8_1 [min_heap.cpp]
 - input : Heap `h`
 - output : printouts heap state.
 
-Homework 8_2 [prim.cpp]
+
+# Homework 8_2 [prim.cpp]
 
 1. purpose of this code
 :  implements Prim algorithm  using `min heap` , not the unsorted array.
