@@ -1,9 +1,9 @@
-Homework 9_1 [Hashing.cpp]
+# Homework 9_1 [Hashing.cpp]
 
-1. purpose of this code
+## 1. purpose of this code
 :  implements several hash function including ‘add,delete,search,print`.
 
-2. function
+## 2. function
 
 1)void init_table(ListNode* ht[])
 - input : hash table `ht`
@@ -34,13 +34,13 @@ Homework 9_1 [Hashing.cpp]
 - output :  deletes item with given item in hash table .
 
 
-Homework 9_2 [Bst_sort.cpp]
+# Homework 9_2 [Bst_sort.cpp]
 
 
-1. purpose of this code
+## 1. purpose of this code
 :  implements several hash function including ‘add,delete,search,print`.
 
-2. function
+## 2. function
 
 1)int random(int data_maxval)
 - input : maximum value of random generating data
