@@ -3,12 +3,15 @@
 ## Sliding window Flow control
 
 How it works? TX can send more than one frame in limitation of a window size denoted as W without waiting for an ACK from RX.
+
 Need a (k-bit) sequence number which is sent in each frame
+
 (ex) with k=3, frames can be numbered 0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, .... -> max window size = 2^k-1 (given k bit)
 
 W can be 8 when k is 3 WHY?
--> 
+
 More efficient than Stop-and-wait protocol since **sliding window can send additional frames** while waiting an ACK from RX.
+
 Utilization depending on a window size W
 (case 1) W >= (T_trans + 2 x T_prop) / T_trans  --> Utilization is 100% -> link 가 계속 일함.
 (case 2) W < (T_trans + 2 x T_prop) / T_trans    --> Utilization = ( W x T_trans ) / (T_trans + 2 x T_prop) x 100  < 100%
@@ -17,7 +20,7 @@ Utilization depending on a window size W
 ## two ACKs used used for Sliding window Flow control
 
 - RR5 means RX received well up to Frame4, denoted as F4 and is ready for F5
-- RNR5 means RX received well up to Frame4, i.e., F4 but is not ready for F5 <-- Flow control only
+- RNR5 means RX received well up to Frame4, i.e., F4 but is **not ready** for F5 <-- Flow control only
 
 ## Piggybacking 
 : Sending user data and ACK together and saving bandwidth in full-duplex connection
@@ -55,6 +58,7 @@ Q. What does REJ5 means? : Please retx from F5 and subsequent frames, i.e. go ba
 
 ## Selective reject ARQ
 : RR, SREJ, requires more buffer space at RX, more complicated window management, but less retransmission overhead 
+
 --> **Good for long propagation connection like satellite communication**, Timers attached at individual frames in its sending buffer
 
 ## High-level Data Link Control (HDLC) 
@@ -68,8 +72,11 @@ ex. data부분에 시작, 끝 flag와 중복되는 패턴이 나오는 걸 막�
 - ABM(Asynchronous Balanced Mode): Combined - Combined
 
 Q. Which one between NRM and ABM is more appropriate for **full-duplex p2p link**? 
+
 A. **ABM** since both stations work as primary/secondary and thus no polling overhead for data transfer.
+
 HDLC defines three types of frames : Information frame (**I-frame**), Supervisory frame (**S-frame**) and Unnumbered frame (**U-frame**)
+
 HDLC operation consists of Link setup using U-frames data, transfer using I- and S-frames, link disconnect using U-frames
+
 What frames have Information field in HDLC? I-frame and U-frame
-끝. 
