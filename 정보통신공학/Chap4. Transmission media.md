@@ -6,6 +6,8 @@
 The transmission media **can be split into multiple channels** in order for each signal to be transmitted without interference. 
 In other words, a channel is a logical path between a transmitter and a receiver.
 
+📌Bit를 signal로 변환하는데 소요되는 시간을  transmission delay  이라고 하고, 1bit가 transmitter를 출발하여 receiver에 도달하는데 걸리는 시간을  propagation delay 라고 한다.
+
 ## A channel bandwidth (CBW) 
 : a range of frequency spectrum defined in the channel. However, its effective bandwidth (EBW) is determined considering channel noise. 
 
@@ -30,6 +32,8 @@ In theory, higher frequency means (lower wavelength, higher BW/data rate, higher
 
 ## Transmission Impairments
 
+: 신호가 전송되는 중 거리에 따라 혹은 전송 미디엄의 성질에 따라 신호 세기가 약해지는 현상을   attenuation  이라고 하며,  delay distortion 는 signal이 receiver 도착했을 때, signal을 구성하는 주파수들의 전파속도가 달라 발생하는 시그날 왜곡(out-of-phase)현상을 말한다. 또한, 신호 전송 중 발생하는 다양한 noise들 중  CrossTalk(Interfenrence) 는 twisted Pair에서 주로 발생하는 noise로 두 구리선에서 전송되는 신호가 서로 결합하는 현상을 말하며,  Intermodulation  은 같은 링크에서 전송되는 여러 개의 신호들 중 두 개 주파수의 합 혹은 차에 해당하는 주파수가 생성되어 동일한 값의 주파수를 사용하는 또 다른 신호가 있는 경우 그 신호 전달을 방해하는 현상을 말한다
+
 **1. attenuation **
 : signal strength falls . proportional to "media length" and "frequency".
 
@@ -44,9 +48,11 @@ A. 초당 더 많이 진동 -> 열 AA발생. Power Voltage 감소
 
 - Thermal
 - Intermodulation : Produce signals thar are sum,difference or multiples of original frequencies 
-- CrossTalk : interfence. Twisted Pair에서 AA
+- CrossTalk : Interfenrence. Twisted Pair에서 AA
 - Impulse : short duration, irrequlat pulses
-    
+
+
+
 Overall data rate can be affected by attenuation, delay/attenuation distortion, (impulse) noise, interference (or crosstalk), distance, number of attached receivers to the shared medium as well as a signal bandwidth of the media itself through which the data goes.
 
 **Repeater eliminates noise** after amplifying power, while** amplifier does not care noise**.
@@ -73,3 +79,33 @@ Transmission capacity = Data rate (~1Mbps) < Signal bandwidth (1MHz)
    - Frequency: TP < coax < Optical fiber (higher)
    - BW: TP < coax < Optical fiber (more)
    - Attenuation: TP > coax > Optical (lower)   
+
+
+
+Signal power relations in TP
+    - Insertion loss (A = P_t/P_r) : amount of attenuation, lower is better
+
+    - NEXT loss (= P_t/P_c) : capability of rejecting crosstalk (P_c), higher is better
+
+    - ACR = how much larger the received signal strength (P_r) is compared to crosstalk (P_c).  Ideally NEXT > A, i.e., P_r should be larger than P_c, otherwise,crosstalk cancellation is required.
+
+    - Better communication means lower insertion loss(A_dB) and higher Next loss(NextdB).
+
+    - Crosstalk cancellation may be required if received signal power(P_r) is less than crosstalk signal power(P_c).
+
+Applications
+   - TP: Telephone line, Ethernet / coax: HFC / optical Fiber: FTTP, long-distance telephone service,
+
+Antenna
+   - Omnidirection antenna : radiates "uniformly in all direction in one plane (한 평면에서만 균등)"   ex) radio broadcasting antennas, and antennas for cell phones, FM radios, walkie-talkies, wireless computer networks, cordless phones, GPS
+
+   - Directional antenna : radiate greater power in specific directions.  ex) Parabolic antenna, Helical antenna, Horn antenna...
+
+Three wireless propagation operations
+  (a) (~ 2 MHz) : Ground wave propagation - long distance, ex) AM
+
+  (b) (2~30MHz) : Sky wave propagation - multi-hop between curvature of the Earth and ionosphere, ex) Military comm., Amature radio
+
+  (c) (30MHz ~ ) : Line-of-Sight (LoS) propagation, ex) Microwave comm.(FM, UHF TV), Satellite communication,..
+
+      - Radio LoS can support longer distance than Optical LoS.
