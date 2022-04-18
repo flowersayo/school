@@ -67,7 +67,7 @@ If a protocol defines the **large header**, then it means  the protocol
     than the protocol which has a small size header.
     
     
-# IPv6 VS  IPv4
+## IPv6 VS  IPv4
 : IPv4 (32bit) provides four times bigger IP addresses than IPv6 (64 bit) .
 Key design factors of **IPv6 are fast** packet delivery in the core network and QoS. However, QoS tried in IPv6 has NOT been successfully implemented.
 
@@ -78,8 +78,19 @@ Key design factors of **IPv6 are fast** packet delivery in the core network and 
 - IPv6 설계 시 QoS (Quality of Service)를 제공하려고 하였으나 실제 서비스를 제공하는 데는 실패하였다.
 - IPv6 가 등장한 가장 근본적인 이유는 IPv4 주소 고갈 (depletion) 때문이다.
 
-# Service Access Point (SAP)
+##Service Access Point (SAP)
 : a logical position, where **two adjacent layers** in one entity communicate with each other by **calling function**, i.e., **primitives (request/indication/response/confirm).**
+
+
+## 퀴즈 객관식
+
+a. 5계층 응용이 측정한 data rate < 1계층 물리계층에서 구현한 bandwidth 
+b. SAP (Service Access Point)란 하나의 노드 (host 혹은 router)에서 인접한 두 계층 사이에 데이터를 주고 받는 논리적인 지점을 의미하며, 결과적으로 인접한 두 계층에 구현된 두 소프트웨어 사이의 function(primitive) call을 의미한다.
+c. Transport layer와 application layer 사이의 SAP (Service Access Point)를 TSAP이라고 하며 이는 socket을 이용하여 구현된다.
+d. 한 개의 transmission medium 은 여러 개의 channel로 구성될 수 있으며, 각 channel은 상위데이터가 전송되는 논리적인 길 (logical path)에 해당한다.
+e. 고주파수 신호는 고품질 데이터 전송이 가능하나 직진성이 강해서 멀리 전송되지 못해 coverage가 작다.
+f. Signal은 여러 개의 frequency 들로 구성되어 있으며, signal bandwidth는 frequency spectrum에서 그 frequency들이 차지하는 영역의 폭을 의미한다.
+g. 데이터통신의 5계층 모델에서 각 계층은 자신 보다 아래 계층에서 제공하는 서비스를 사용(service user)해서 위 계층에 서비스를 제공(service provider)는 역할을 한다.
  
     
 
