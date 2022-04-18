@@ -121,6 +121,8 @@ TDM : Time Division Multiplexing
 - little overhead for err control
 - allow multiple virtual channels with the data rate on each channel dynamically set on demand
 
+FR 의 데이터 전송단위인 frame의 크기는 ATM 의 cell 보다 더 크기 때문에 같은 크기의 메시지를 FR를 이용해 전송할 경우 전송되는 frame 의 개수는 ATM의 cell 숫자 보다 더 적다. Header는 각 frame 혹은 cell 마다 추가되므로 포함되는 header 숫자도 frame의 경우 더 적다.
+
 📌Virtual Circuit(VC)
 c.s : preplanned route. -> fixed route during data delivery
 p.s : data can be delayed or dropped at output buffers 
@@ -152,13 +154,22 @@ p.s : data can be delayed or dropped at output buffers
 
 
 
-Can you tell the differences between LAN and WAN?
+# the differences between LAN and WAN?
 
+- LAN은 주로 하나의 기관에 속한 지역에 설치되어 해당 기관이 소유/관리한다면, WAN은 공공지역 설치되고 소유주도 여러명 일수있다.
+-  WAN은 소유주가 다른 다양한 네트워크들이 연결되어 있으므로, LAN 에서 보다 WAN에서 congestion (혼잡) 이 더 자주 발생하게 된다.
+- 일반적으로 WAN을 구성하기위해 설치되는 링크의 용량(transmission rate)은 LAN에 사용되는 링크의 용량보다 크다. 
+- Client가 on-premises 서버에 연결할 때 보다, off-premises 서버에 접속할 때 평균적으로 느끼는 지연(latency)이 더 길다.
+- LAN은 하나의 기관에서 관리하고 그 범위가 WAN에 비해 크지 않으므로 LAN에서 발생하는 트래픽 양과 패턴은 WAN 의 경우보다 예측이 쉽다.
+
+WAN에 설치되는 링크의 절대적인 용량(bandwidth)은 LAN 보다크다. 단지 client end host 가 WAN을 사용할 때 느끼는 available bandwidth가 더 작다는 것입니다. 이것은 Client가 on-premises 서버에 연결할 때 보다, off-premises 서버에 접속할 때 평균적으로 느끼는 지연(latency)이 더 긴 것과 같은 이유이다.
 
 ![KakaoTalk_20220417_022957251](https://user-images.githubusercontent.com/86418674/163685352-c4cea42b-98e5-4c6f-afb1-f10bd7520ef0.jpg)
 
 - ISPs can be connected to each other via IXP or peering.
 - (Point of Presence) PoP is a set of network devices of a provider ISP where consumer ISPs can connect to the provider ISP.
+
+인터넷 코아 네트워크는 계층적인 구조를 이루고 있으며, 두 네트워크들을 연결하는 기술은 다양하다. 우선, customer ISP가 provider ISP에 연결될 수 있는데 이때 **provider ISP의 router들이 모여있는 지점**을  Point of Presence  라고 한다. 또한, **상위계층 ISP와 연결하는 대신 같은 계층의 ISP들간에 직접 연결하는 방식**을  Peering  이라 하며, 이는 비용절감의 효과가 있다. 더불어, 다중의 ISP들이 제3의 회사가 제공하는  **IXP **를 통해서 연결될 수도 있다.
 
 ## standard making organization
 
@@ -185,10 +196,15 @@ Can you tell the differences between LAN and WAN?
  
   ❗ On-premise 서버는 특정 기관이 소유하고 있는 LAN 내부에 연결된 서버를 의미하므로 만일 on-premise 서버를 확장하여 작업하는 기관의 경우 WAN으로 나가는 트래픽은 줄어들게 된다.
   
--인터넷이 동작하는 기능은 5개의 계층
+-인터넷이 동작하는  5개의 계층
 
 layer 5 : application
 layer 4 : transport
 layer 3 :  network
 layer 2 : data link
 layer 1 : physical
+
+-아래 나열된 프로토콜 혹은 기술을 표준화한 기구
+ FR (Frame Relay) → ITU, ATM (Asynchronous Transfer Mode)  → ITU, HTTP (HyperText Transfer Protocol) → IETF,
+IP (Internet Protocol) → IETF,
+Ethernet (CSMA/CD) → IEEE, Wi-Fi (CSMA/CA) → IEEE, ASCII(American Standard Code for Information Interchange) → ISO, TCP (Transmission Control Protocol) → IETF
