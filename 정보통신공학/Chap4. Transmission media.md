@@ -80,7 +80,7 @@ Transmission capacity = Data rate (~1Mbps) < Signal bandwidth (1MHz)
    - BW: TP < coax < Optical fiber (more)
    - Attenuation: TP > coax > Optical (lower)   
 
-
+이론상 Network link의 길이가 길수록 receiver에 도달한 신호의 attenuation이 더 크다. 또한 attenuation은 고주파수 신호에서 더 많이 발생한다. 그러나, 다양한 기술로 attenuation을 낮추거나 제거할 수 있기 때문에 고주파수 신호를 구현하는 링크(transmission medium) 라고 해서 반드시 attenuation 이 더 크게 발생한다고 할 수는 없다.
 
 Signal power relations in TP
     - Insertion loss (A = P_t/P_r) : amount of attenuation, lower is better
