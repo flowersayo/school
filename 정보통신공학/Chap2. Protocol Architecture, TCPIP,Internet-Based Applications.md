@@ -47,4 +47,8 @@ Only 3 layers such as network (L3) and data link (L2) and physical (L1) layers a
 
 If a protocol defines the **large header**, then it means  the protocol
     contains **more control information**, provides more services (functions) and may take more time
-    than the protocol which has a small size header
+    than the protocol which has a small size header.
+    
+    
+Q. 호스트와 프로세스의 차이
+% 인터넷에 연결된 특정 process에게 데이터를 전달하기 위해 그 process가 실행되고 있는 호스트가 인터넷에 연결된 NIC 카드에 설정된 **IP address**와 그 process가 사용하는 **port number**, 이 두 가지를 알아야합니다.  이때 IP address 와 port number를 각각 집주소와 수취인에 비유하는데, 이는 인터넷에서의 통신과 우체국을 이용한 편지통신이 유사하기 때문입니다. 즉, IP address를 이용해서 중간 라우터들이 destination host를 찾아주게 되므로 **IP 주소를 집주소**에 비유하며, destination host에 도달한 후 port number를 이용해서 해당 process에게 데이터를 전달하므로 **port number를 수취인**에 비유하게 됩니다. 
