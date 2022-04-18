@@ -71,6 +71,12 @@ If a protocol defines the **large header**, then it means  the protocol
 : IPv4 (32bit) provides four times bigger IP addresses than IPv6 (64 bit) .
 Key design factors of **IPv6 are fast** packet delivery in the core network and QoS. However, QoS tried in IPv6 has NOT been successfully implemented.
 
+- IPv4 주소길이는 32bits 이고, IPv6 주소는 그 4배인 128bits 이다.
+- IPv4 라우터와는 달리 IPv6 라우터는 IP 패킷 fragmentation을 하지 않는다.
+- IPv4 header 와 IPv6 header 의 필드들을 비교했을 때 IPv6는 IPv4 보다 상위 계층 (layer 4)에 제공하는 서비스 기능이 적다.
+- IPv6도 IPv4 처럼 Internet checksum을 하여 error detection을 한다. 
+- IPv6 설계 시 QoS (Quality of Service)를 제공하려고 하였으나 실제 서비스를 제공하는 데는 실패하였다.
+- IPv6 가 등장한 가장 근본적인 이유는 IPv4 주소 고갈 (depletion) 때문이다.
 
 # Service Access Point (SAP)
 : a logical position, where **two adjacent layers** in one entity communicate with each other by **calling function**, i.e., **primitives (request/indication/response/confirm).**
