@@ -43,21 +43,6 @@ Only 3 layers such as network (L3) and data link (L2) and physical (L1) layers a
 
     L2) Data Link L :  **1-hop delivery** using network dependent layer2 address e.g., **MAC **address
 
-#PDU
-: message at L5, segment at L4, packet at L3, frame at L2
-
-
-# History of the Internet and TCP 
-: ARPANET (NCP) à NSFnet (original TCP/IP) -> à Internet (Updated TCP/IP, and security issues)
-
-If a protocol defines the **large header**, then it means  the protocol
-    contains **more control information**, provides more services (functions) and may take more time
-    than the protocol which has a small size header.
-Pv6 provides four times bigger IP addresses than IPv4.
-Key design factors of IPv6 are fast packet delivery in the core network and QoS. However, QoS tried in IPv6 has NOT been successfully implemented.
-Service Access Point (SAP) is a logical position, where two adjacent layers in one entity communicate with each other by calling function, i.e., primitives (request/indication/response/confirm).
- 
-    
 Q. 호스트와 프로세스의 차이
 % 인터넷에 연결된 특정 process에게 데이터를 전달하기 위해 그 process가 실행되고 있는 호스트가 인터넷에 연결된 NIC 카드에 설정된 **IP address**와 그 process가 사용하는 **port number**, 이 두 가지를 알아야합니다.  이때 IP address 와 port number를 각각 집주소와 수취인에 비유하는데, 이는 인터넷에서의 통신과 우체국을 이용한 편지통신이 유사하기 때문입니다. 즉, IP address를 이용해서 중간 라우터들이 destination host를 찾아주게 되므로 **IP 주소를 집주소**에 비유하며, destination host에 도달한 후 port number를 이용해서 해당 process에게 데이터를 전달하므로 **port number를 수취인**에 비유하게 됩니다. 
 
@@ -66,6 +51,29 @@ IP 주소는 NIC(Network Interface Card)에 설정되는 값으로 만일 네트
 대표적인 예가 라우터임. 라우터는 여러개의 subnet과 연결되어있으며, 서로 다른 subnet과 연결된 각 포트 마다 IP 주소가 설정되어 있음.
 또한, 서버 호스트의 경우에도 서비스 지연을 줄이기 위해 둘 이상의 NIC 카드를 장착하고 각 다른 subnet에 연결시킬 수 있다. 이때 각 NIC에는 다른 IP 주소가 설정되어 운용됨.
 
-# 계층 인터넷 프로토콜 스택의 각 계층 별 서비스 기능(role), protocol data unit (PDU) 이름 및 사용하는 대표적인주소(address)
+
+# 계층 인터넷 프로토콜 스택
+: 각 계층 별 서비스 기능(role), protocol data unit (PDU) 이름 및 사용하는 대표적인주소(address)
 
 ![20220418231356](https://user-images.githubusercontent.com/86418674/163820799-16dc6bbc-3306-42ca-84b3-6be512677748.png)
+
+
+
+# History of the Internet and TCP 
+: ARPANET (NCP) à NSFnet (original TCP/IP) -> à Internet (Updated TCP/IP, and security issues)
+
+If a protocol defines the **large header**, then it means  the protocol
+    contains **more control information**, provides more services (functions) and may take more time
+    than the protocol which has a small size header.
+    
+    
+# IPv6 VS  IPv4
+: IPv4 (32bit) provides four times bigger IP addresses than IPv6 (64 bit) .
+Key design factors of **IPv6 are fast** packet delivery in the core network and QoS. However, QoS tried in IPv6 has NOT been successfully implemented.
+
+
+# Service Access Point (SAP)
+: a logical position, where **two adjacent layers** in one entity communicate with each other by **calling function**, i.e., **primitives (request/indication/response/confirm).**
+ 
+    
+
