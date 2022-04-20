@@ -6,14 +6,8 @@ using namespace std;
 
 //정렬할 배열, 정렬한 배열
 vector<int> arr, sorted;
-int cnt;
-//start ~ end 사이의 원소를 출력하는 함수
-void printArr(int start, int end, string tag) {
-    cout << tag << " array : ";
-    for (int i = start; i <= end; i++)
-        cout << arr[i] << ' ';
-    cout << '\n';
-}
+
+
 
 //합치기 
 void merge(int left, int mid, int right) {
@@ -32,7 +26,7 @@ void merge(int left, int mid, int right) {
         else {
 
             sorted[k++] = arr[j++];
-            
+           
         }
     }    
     
@@ -63,14 +57,13 @@ void merge(int left, int mid, int right) {
 //일단 반으로 나누고(divide) 나중에 다시 합치면서 정렬.
 void mergeSort(int left, int right) {
   
-    cnt++;
    
     if (left < right) // 배열의 크기가 1이 아니라면
     {
 
         int m = (left + right) / 2; //반으로 쪼갠다.
         mergeSort(left, m);
-        mergeSort(m, right);
+        mergeSort(m+1, right);
         merge(left, m, right);
 
     }
@@ -94,6 +87,5 @@ int main() {
     //출력
     for (int i = 0; i < n; i++)
         cout << arr[i] << '\n';
-
 
 }
